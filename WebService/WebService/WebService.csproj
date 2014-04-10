@@ -52,15 +52,20 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Service1.asmx" />
     <Content Include="Web.config" />
+    <Content Include="WebServiceUpg1.asmx" />
+    <Content Include="WebServiceUpg2.asmx" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Service1.asmx.cs">
-      <DependentUpon>Service1.asmx</DependentUpon>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServiceUpg1.asmx.cs">
+      <DependentUpon>WebServiceUpg1.asmx</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServiceUpg2.asmx.cs">
+      <DependentUpon>WebServiceUpg2.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
