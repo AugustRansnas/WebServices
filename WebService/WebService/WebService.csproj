@@ -57,6 +57,7 @@
     <Content Include="WebServiceUpg2.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjectOwner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebServiceUpg1.asmx.cs">
       <DependentUpon>WebServiceUpg1.asmx</DependentUpon>
