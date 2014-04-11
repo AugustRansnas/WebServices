@@ -22,5 +22,10 @@ namespace WebService
         {
             return "Metod1";
         }
+        [WebMethod]
+        public string Metod2()
+        {
+            return "Metod2";
+        }
     }
 }
