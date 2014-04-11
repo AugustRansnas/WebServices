@@ -66,6 +66,7 @@
     <Content Include="WebServiceUpg2.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ObjectOwner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service References\WebServiceUpg1Reference\Reference.cs">
       <AutoGen>True</AutoGen>
