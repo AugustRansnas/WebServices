@@ -18,7 +18,7 @@ namespace WebService
     {
 
         [WebMethod]
-        public string Metod1()
+        public string Metod1() //Test
         {
             return "Metod1";
         }
