@@ -1,0 +1,10 @@
+diff a/WebService/WebService/WebServiceUpg1.asmx.cs b/WebService/WebService/WebServiceUpg1.asmx.cs	(rejected hunks)
+@@ -18,7 +18,7 @@
+     {
+ 
+         [WebMethod]
+-        public string Metod1()
++        public string Metod1() //Test
+         {
+             return "Metod1";
+         }
