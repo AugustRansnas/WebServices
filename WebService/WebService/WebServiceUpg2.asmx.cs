@@ -1,5 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
 using System.Web;
 using System.Web.Services;
@@ -10,7 +12,7 @@ namespace WebService
     /// <summary>
     /// Summary description for WebServiceUpg2
     /// </summary>
-    [WebService(Namespace = "http://localhost/")]
+    [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
@@ -20,7 +22,8 @@ namespace WebService
         string connectionString = "server=localhost; Trusted_Connection=yes; database=PK Praktikfallet;";
 
         [WebMethod(Description = "Returns ObjectOwners", EnableSession = false)]
-        public DataSet GetObjectOwner()
+
+        public List<ObjectOwner> GetObjectOwner()
         {
             SqlDataAdapter adapter = new SqlDataAdapter(
             "select ownerSsnr, name, phoneNr, email from ObjectOwner", connectionString);
@@ -28,24 +31,56 @@ namespace WebService
             adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapter.Fill(objectOwnerDS, "ObjectOwner");
 
-            return objectOwnerDS;
-        }
-
-        [WebMethod]
-        public List<ObjectOwner> GetObjectOwnerList()
-        {
-            DataSet objectOwner = GetObjectOwner();
+            DataTable dt = new DataTable();
+            dt = objectOwnerDS.Tables["ObjectOwner"];
             List<ObjectOwner> objectOwnerList = new List<ObjectOwner>();
 
-            foreach (DataRow dataRow in objectOwner.Tables["ObjectOwner"].Rows)
+
+            foreach (DataRow dataRow in dt.Rows)
             {
-                ObjectOwner o = new ObjectOwner(dataRow["ownerSsnr"].ToString(), dataRow["name"].ToString(), dataRow["phoneNr"].ToString(), dataRow["email"].ToString());
-                objectOwnerList.Add(o);
+                ObjectOwner oo = new ObjectOwner();
+                oo.OwnerSsnr = dataRow["ownerSsnr"].ToString();
+                oo.Name = dataRow["name"].ToString();
+                oo.PhoneNr = dataRow["phoneNr"].ToString();
+                oo.Email = dataRow["email"].ToString();
+                objectOwnerList.Add(oo);
             }
+
+
             return objectOwnerList;
-            
+
+        }
+
+        [WebMethod(Description = "Returns RealEstateBroker", EnableSession = false)]
+
+        public List<RealEstateBroker> GetRealEstateBroker()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(
+            "select * from RealEstateBroker", connectionString);
+            DataSet realEstateBrokerDS = new DataSet();
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.Fill(realEstateBrokerDS, "RealEstateBroker");
+
+            DataTable dt = new DataTable();
+            dt = realEstateBrokerDS.Tables["RealEstateBroker"];
+            List<RealEstateBroker> RealEstateBrokerList = new List<RealEstateBroker>();
+
+
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                RealEstateBroker oo = new RealEstateBroker();
+                oo.BrokerSsnr = dataRow["brokerSsnr"].ToString();
+                oo.Name = dataRow["name"].ToString();
+                oo.PhoneNr = dataRow["phoneNr"].ToString();
+                oo.Email = dataRow["email"].ToString();
+                oo.City = dataRow["brokerAddress"].ToString();
+                RealEstateBrokerList.Add(oo);
+            }
+
+
+            return RealEstateBrokerList;
+
         }
     }
-   
 }
 
