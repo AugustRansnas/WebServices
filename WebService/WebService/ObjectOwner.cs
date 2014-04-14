@@ -12,7 +12,7 @@ namespace WebService
         private string phoneNr;
         private string email;
 
-        public ObjectOwner() { }
+       // public ObjectOwner() { }
 
         public ObjectOwner(string ownerSsnr, string name, string phoneNr,string email) 
         {

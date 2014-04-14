@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Services;
 
+
 namespace WebService
 {
     /// <summary>
@@ -24,10 +25,10 @@ namespace WebService
         public DataSet GetObjectOwner()
         {
             SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from ObjectOwner", connectionString);
+            "select ownerSsnr, name, phoneNr, email from ObjectOwner", connectionString);
             DataSet objectOwnerDS = new DataSet();
             adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(objectOwnerDS, "ObjectOwners");
+            adapter.Fill(objectOwnerDS, "ObjectOwner");
 
             return objectOwnerDS;
         }
@@ -35,15 +36,18 @@ namespace WebService
         [WebMethod]
         public List<ObjectOwner> GetObjectOwnerList()
         {
-            DataSet objectOwnerDS = GetObjectOwner();
+            DataSet objectOwner = GetObjectOwner();
             List<ObjectOwner> objectOwnerList = new List<ObjectOwner>();
 
-            foreach (DataRow dataRow in objectOwnerDS.Tables["ObjectOwner"].Rows)
+            foreach (DataRow dataRow in objectOwner.Tables["ObjectOwner"].Rows)
             {
-                objectOwnerList.Add(new ObjectOwner(dataRow["ownerSsnr"].ToString(), dataRow["name"].ToString(), dataRow["phoneNr"].ToString(), dataRow["email"].ToString()));
+                ObjectOwner o = new ObjectOwner(dataRow["ownerSsnr"].ToString(), dataRow["name"].ToString(), dataRow["phoneNr"].ToString(), dataRow["email"].ToString());
+                objectOwnerList.Add(o);
             }
             return objectOwnerList;
+            
         }
     }
+   
 }
 
