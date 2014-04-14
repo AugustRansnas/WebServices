@@ -10,7 +10,7 @@ namespace WebService
     /// <summary>
     /// Summary description for WebServiceUpg1
     /// </summary>
-    [WebService(Namespace = "http://brokerapplication.org/", Description="<b> Hämta en fils innehåll </b>")]
+    [WebService(Namespace = "http://brokerapplication.org/", Description = "<b> Hämta en fils innehåll </b>")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
