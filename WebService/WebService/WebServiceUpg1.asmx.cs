@@ -20,7 +20,7 @@ namespace WebService
         public WebServiceUpg1() { }
 
         [WebMethod]
-        public string GetFileContent(string filepath)
+        public string GetFileContent(string filepath) 
         {
             string content;
 
