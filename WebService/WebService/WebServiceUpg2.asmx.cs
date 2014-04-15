@@ -73,7 +73,8 @@ namespace WebService
                 oo.Name = dataRow["name"].ToString();
                 oo.PhoneNr = dataRow["phoneNr"].ToString();
                 oo.Email = dataRow["email"].ToString();
-                oo.City = dataRow["brokerAddress"].ToString();
+                oo.City = dataRow["city"].ToString();
+                oo.BrokerAddress = dataRow["brokerAddress"].ToString();
                 RealEstateBrokerList.Add(oo);
             }
 
