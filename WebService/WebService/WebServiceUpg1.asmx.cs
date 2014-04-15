@@ -20,27 +20,28 @@ namespace WebService
         public WebServiceUpg1() { }
 
         [WebMethod]
-        public string GetFileContent(string filepath) 
+        public string GetFileContent(string filepath)
         {
-            string content;
-
-            if (!filepath.Equals(""))
+            try
             {
-                try
+                using (StreamReader sr = new StreamReader(filepath))
                 {
-                    StreamReader sr = new StreamReader(filepath);
-                    content = sr.ReadToEnd();
-                }
-                catch (Exception e)
-                {
-                    return "Exception.";
+                    return sr.ReadToEnd();
                 }
             }
-            else
+            catch (OutOfMemoryException e)
             {
-                return "Filen hittades inte";
+                return "Out of memory exception.";
             }
-            return content;
+            catch (IOException e)
+            {
+                return "I/O Exception.";
+            }
+            catch(ArgumentException e)
+            {
+                return "Ogiltlig sökväg.";
+            }
+            
         }
 
     }
