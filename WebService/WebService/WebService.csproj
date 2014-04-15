@@ -78,7 +78,9 @@
   <ItemGroup>
     <Compile Include="ObjectOwner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ProspectiveBuyer.cs" />
     <Compile Include="RealEstateBroker.cs" />
+    <Compile Include="RealEstateObject.cs" />
     <Compile Include="Service References\WebServiceUpg1Reference\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -89,6 +91,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="Showing.cs" />
     <Compile Include="WebServiceUpg1.asmx.cs">
       <DependentUpon>WebServiceUpg1.asmx</DependentUpon>
       <SubType>Component</SubType>
