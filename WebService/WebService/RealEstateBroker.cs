@@ -5,45 +5,54 @@ using System.Web;
 
 namespace WebService
 {
-    public class ObjectOwner
+    public class RealEstateBroker
     {
-        private string ownerSsnr;
+        private string brokerSsnr;
         private string name;
+        private string brokerAddress;
+        private string city;
         private string phoneNr;
         private string email;
 
-        public ObjectOwner(){
+
+        public RealEstateBroker(){}
+
+        public string BrokerSsnr
+        {
+            get { return brokerSsnr; }
+            set { brokerSsnr = value; }
+        }
         
-        }
-
-        /*public ObjectOwner(string ownerSsnr, string name, string phoneNr,string email) 
-        {
-            OwnerSsnr = this.ownerSsnr;
-            Name = this.name;
-            PhoneNr = this.phoneNr;
-            Email = this.email;
-        }
-        */
-        public string OwnerSsnr
-        {
-            get { return ownerSsnr; }
-            set { ownerSsnr = value; }
-        }
-
         public string Name
         {
             get { return name; }
             set { name = value; }
         }
+
+        public string BrokerAddress
+        {
+            get { return brokerAddress; }
+            set { brokerAddress = value; }
+        }
+
+        public string City
+        {
+            get { return city; }
+            set { city = value; }
+        }
+        
         public string PhoneNr
         {
             get { return phoneNr; }
             set { phoneNr = value; }
         }
+        
+
         public string Email
         {
             get { return email; }
             set { email = value; }
         }
+
     }
 }

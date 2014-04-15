@@ -4,6 +4,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebService", "WebService\WebService.csproj", "{E20ECECD-7F38-4C1F-9340-E1427A9287E8}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CATest", "CATest\CATest.csproj", "{6552CFD7-6984-4DE6-A622-E8F5EE2C44E6}"
+	ProjectSection(ProjectDependencies) = postProject
+		{E20ECECD-7F38-4C1F-9340-E1427A9287E8} = {E20ECECD-7F38-4C1F-9340-E1427A9287E8}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "praktikfall", "..\..\Pk praktikfall\praktikfall.csproj", "{49B8434D-90A4-4D83-B072-F4876938869F}"
 EndProject
