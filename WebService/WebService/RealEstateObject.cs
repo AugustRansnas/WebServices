@@ -11,6 +11,7 @@ namespace WebService
         private string objCity;
         private int objPrice; 
         private int objArea;
+        private string objAddress;
         private string objRooms;
         private string unitType;
         private string objInfo;
@@ -86,7 +87,6 @@ namespace WebService
             get { return ownerSsnr; }
             set { ownerSsnr = value; }
         } 
-        private string objAddress;
-
+        
     }
 }

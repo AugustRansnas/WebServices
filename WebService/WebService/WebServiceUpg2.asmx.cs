@@ -19,14 +19,14 @@ namespace WebService
     // [System.Web.Script.Services.ScriptService]
     public class WebServiceUpg2 : System.Web.Services.WebService
     {
-        string connectionString = "server=localhost; Trusted_Connection=yes; database=PK Praktikfallet;";
+        string connectionString = "server=localhost; Trusted_Connection=yes; database=MA Praktikfallet;";
 
         [WebMethod(Description = "Returns ObjectOwners", EnableSession = false)]
 
         public List<ObjectOwner> GetObjectOwner()
         {
             SqlDataAdapter adapter = new SqlDataAdapter(
-            "select ownerSsnr, name, phoneNr, email from ObjectOwner", connectionString);
+            "select * from ObjectOwner", connectionString);
             DataSet objectOwnerDS = new DataSet();
             adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
             adapter.Fill(objectOwnerDS, "ObjectOwner");
@@ -164,8 +164,8 @@ namespace WebService
                 ro.ObjInfo = dataRow["objInfo"].ToString();
                 ro.ObjPrice = int.Parse(dataRow["objPrice"].ToString());
                 ro.OwnerSsnr = dataRow["ownerSsnr"].ToString();
-                ro.UnitType = dataRow["unitType"].ToString();
-                ro.Image = dataRow["image"].ToString();
+                ro.UnitType = dataRow["objUnitType"].ToString();
+                ro.Image = dataRow["objImage"].ToString();
                 ro.BrokerSsnr = dataRow["brokerSsnr"].ToString();
                 ro.ObjRooms = dataRow["objRooms"].ToString();
                 realEstateObjectList.Add(ro);
