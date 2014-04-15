@@ -81,6 +81,35 @@ namespace WebService
             return RealEstateBrokerList;
 
         }
+
+        [WebMethod(Description = "Returns Showings", EnableSession = false)]
+
+        public List<Showing> GetShowing()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(
+            "select * from Showing", connectionString);
+            DataSet showingDS = new DataSet();
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.Fill(showingDS, "Showing");
+
+            DataTable dt = new DataTable();
+            dt = showingDS.Tables["Showing"];
+            List<Showing> ShowingList = new List<Showing>();
+
+
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                Showing s = new Showing();
+                s.BuyerSsnr = dataRow["buyerSsnr"].ToString();
+                s.ObjNr = int.Parse(dataRow["objNr"].ToString());
+                s.ShowingDate = dataRow["showingDate"].ToString();
+                ShowingList.Add(s);
+            }
+
+
+            return ShowingList;
+
+        }
     }
 }
 
