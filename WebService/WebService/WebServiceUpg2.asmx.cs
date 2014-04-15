@@ -110,6 +110,71 @@ namespace WebService
             return ShowingList;
 
         }
+
+        [WebMethod(Description = "Returns ProspectiveBuyers", EnableSession = false)]
+
+        public List<ProspectiveBuyer> GetProspectiveBuyers()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(
+            "select * from ProspectiveBuyer", connectionString);
+            DataSet prospectiveBuyerDS = new DataSet();
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.Fill(prospectiveBuyerDS, "ProspectiveBuyer");
+
+            DataTable dt = new DataTable();
+            dt = prospectiveBuyerDS.Tables["ProspectiveBuyer"];
+            List<ProspectiveBuyer> prospectiveBuyerList = new List<ProspectiveBuyer>();
+
+
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                ProspectiveBuyer pb = new ProspectiveBuyer();
+                pb.BuyerSsnr = dataRow["buyerSsnr"].ToString();
+                pb.Name = dataRow["name"].ToString();
+                pb.PhoneNr = dataRow["phoneNr"].ToString();
+                prospectiveBuyerList.Add(pb);
+            }
+
+
+            return prospectiveBuyerList;
+
+        }
+
+        [WebMethod(Description = "Returns RealEstateObjects", EnableSession = false)]
+
+        public List<RealEstateObject> GetRealEstateObjects()
+        {
+            SqlDataAdapter adapter = new SqlDataAdapter(
+            "select * from RealEstateObject", connectionString);
+            DataSet realEstateObjectDS = new DataSet();
+            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+            adapter.Fill(realEstateObjectDS, "RealEstateObject");
+
+            DataTable dt = new DataTable();
+            dt = realEstateObjectDS.Tables["RealEstateObject"];
+            List<RealEstateObject> realEstateObjectList = new List<RealEstateObject>();
+
+
+            foreach (DataRow dataRow in dt.Rows)
+            {
+                RealEstateObject ro = new RealEstateObject();
+                ro.Objnr = int.Parse(dataRow["objNr"].ToString());
+                ro.ObjAddress = dataRow["objAddress"].ToString();
+                ro.ObjArea = int.Parse(dataRow["objArea"].ToString());
+                ro.ObjInfo = dataRow["objInfo"].ToString();
+                ro.ObjPrice = int.Parse(dataRow["objPrice"].ToString());
+                ro.OwnerSsnr = dataRow["ownerSsnr"].ToString();
+                ro.UnitType = dataRow["unitType"].ToString();
+                ro.Image = dataRow["image"].ToString();
+                ro.BrokerSsnr = dataRow["brokerSsnr"].ToString();
+                ro.ObjRooms = dataRow["objRooms"].ToString();
+                realEstateObjectList.Add(ro);
+            }
+
+
+            return realEstateObjectList;
+
+        }
     }
 }
 
