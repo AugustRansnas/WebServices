@@ -17,7 +17,7 @@ namespace WebService
         private string brokerSsnr;
         private string ownerSsnr;
         private string image;
-
+        //
         public string Image
         {
             get { return image; }
