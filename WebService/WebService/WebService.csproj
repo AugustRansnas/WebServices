@@ -61,10 +61,6 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.ObjectOwner.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <Content Include="Service References\WebServiceUpg2Reference\WebServiceUpg2.disco" />
     <Content Include="Service References\WebServiceUpg2Reference\configuration91.svcinfo" />
     <Content Include="Service References\WebServiceUpg2Reference\configuration.svcinfo" />
     <Content Include="Service References\WebServiceUpg2Reference\Reference.svcmap">
@@ -106,6 +102,21 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service References\WebServiceUpg1Reference\WebServiceUpg1.wsdl" />
+    <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.ObjectOwner.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.ProspectiveBuyer.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.RealEstateBroker.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.RealEstateObject.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.Showing.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <Content Include="Service References\WebServiceUpg2Reference\WebServiceUpg2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

@@ -73,7 +73,8 @@ namespace WebService
                 oo.Name = dataRow["name"].ToString();
                 oo.PhoneNr = dataRow["phoneNr"].ToString();
                 oo.Email = dataRow["email"].ToString();
-                oo.City = dataRow["brokerAddress"].ToString();
+                oo.City = dataRow["city"].ToString();
+                oo.BrokerAddress = dataRow["brokerAddress"].ToString();
                 RealEstateBrokerList.Add(oo);
             }
 
@@ -132,6 +133,7 @@ namespace WebService
                 pb.BuyerSsnr = dataRow["buyerSsnr"].ToString();
                 pb.Name = dataRow["name"].ToString();
                 pb.PhoneNr = dataRow["phoneNr"].ToString();
+                pb.Email = dataRow["email"].ToString();
                 prospectiveBuyerList.Add(pb);
             }
 
@@ -168,6 +170,7 @@ namespace WebService
                 ro.Image = dataRow["objImage"].ToString();
                 ro.BrokerSsnr = dataRow["brokerSsnr"].ToString();
                 ro.ObjRooms = dataRow["objRooms"].ToString();
+                ro.ObjCity = dataRow["objCity"].ToString();
                 realEstateObjectList.Add(ro);
             }
 
