@@ -52,9 +52,7 @@ namespace WebService
             catch (Exception)
             {
                 return "Error: General exception. Något gick fel med filtypen.";
-            }                    
-            
+            }                                
         }
-
     }
 }
