@@ -76,6 +76,7 @@
     <Content Include="WebServiceUpg2.asmx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessLayerWebService.cs" />
     <Compile Include="ObjectOwner.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ProspectiveBuyer.cs" />

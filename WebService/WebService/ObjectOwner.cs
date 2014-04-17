@@ -12,18 +12,8 @@ namespace WebService
         private string phoneNr;
         private string email;
 
-        public ObjectOwner(){
-        
-        }
+        public ObjectOwner(){}
 
-        /*public ObjectOwner(string ownerSsnr, string name, string phoneNr,string email) 
-        {
-            OwnerSsnr = this.ownerSsnr;
-            Name = this.name;
-            PhoneNr = this.phoneNr;
-            Email = this.email;
-        }
-        */
         public string OwnerSsnr
         {
             get { return ownerSsnr; }
