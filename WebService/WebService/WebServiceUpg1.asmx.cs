@@ -31,16 +31,28 @@ namespace WebService
             }
             catch (OutOfMemoryException e)
             {
-                return "Out of memory exception.";
+                return "Error: Out of memory exception.";
+            }
+            catch (ArgumentException e)
+            {
+                return "Error: Ogiltlig sökväg.";
+            }
+            catch (FileNotFoundException e)
+            {
+                return "Error: Filen kunde inte hittas.";
+            }
+            catch (DirectoryNotFoundException e)
+            {
+                return "Error: Sökvägen kunde inte hittas";
             }
             catch (IOException e)
             {
-                return "I/O Exception.";
+                return "Error: I/O Exception.";
             }
-            catch(ArgumentException e)
+            catch (Exception e)
             {
-                return "Ogiltlig sökväg.";
-            }
+                return "Error: General exception";
+            }                    
             
         }
 
