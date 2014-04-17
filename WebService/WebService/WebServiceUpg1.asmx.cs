@@ -29,29 +29,29 @@ namespace WebService
                     return sr.ReadToEnd();
                 }
             }
-            catch (OutOfMemoryException e)
+            catch (OutOfMemoryException)
             {
-                return "Error: Out of memory exception.";
+                return "Error: Out of memory exception. Det finns inte tillräckligt med minne tillgängligt för att fortsätta.";
             }
-            catch (ArgumentException e)
+            catch (ArgumentException)
             {
-                return "Error: Ogiltlig sökväg.";
+                return "Error: ArgumentException. Ogiltlig sökväg.";
             }
-            catch (FileNotFoundException e)
+            catch (FileNotFoundException)
             {
-                return "Error: Filen kunde inte hittas.";
+                return "Error: FileNotFoundException. Filen kunde inte hittas.";
             }
-            catch (DirectoryNotFoundException e)
+            catch (DirectoryNotFoundException)
             {
-                return "Error: Sökvägen kunde inte hittas";
+                return "Error: DirectoryNotFoundException. Sökvägen kunde inte hittas";
             }
-            catch (IOException e)
+            catch (IOException)
             {
-                return "Error: I/O Exception.";
+                return "Error: I/O Exception. Något gick fel med filtypen.";
             }
-            catch (Exception e)
+            catch (Exception)
             {
-                return "Error: General exception";
+                return "Error: General exception. Något gick fel med filtypen.";
             }                    
             
         }
