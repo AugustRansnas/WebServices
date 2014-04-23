@@ -18,6 +18,7 @@ namespace WebService
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
 
+
         public class WebServiceUpg2 : System.Web.Services.WebService {
         DataAccessLayerWebService dal;
 
@@ -28,9 +29,10 @@ namespace WebService
         
 
         [WebMethod(Description = "Returns ObjectOwners", EnableSession = false)]
-        public List<ObjectOwner> GetObjectOwner()
+        public List<ObjectOwner> GetObjectOwner(ref string errorMessage)
         {
-            return dal.GetObjectOwner();
+                return dal.GetObjectOwner(ref errorMessage); 
+          
         }
 
         [WebMethod(Description = "Returns RealEstateBroker", EnableSession = false)]

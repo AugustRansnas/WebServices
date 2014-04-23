@@ -11,31 +11,39 @@ namespace WebService
     {  
         string connectionString = "server=localhost; Trusted_Connection=yes; database=MA Praktikfallet;";
 
-        public List<ObjectOwner> GetObjectOwner()
+        public List<ObjectOwner> GetObjectOwner(ref string errorMessage)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-                "select * from ObjectOwner", connectionString);
-            DataSet objectOwnerDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(objectOwnerDS, "ObjectOwner");
-
-            DataTable dt = new DataTable();
-            dt = objectOwnerDS.Tables["ObjectOwner"];
-            List<ObjectOwner> objectOwnerList = new List<ObjectOwner>();
-
-
-            foreach (DataRow dataRow in dt.Rows)
+            try
             {
-                ObjectOwner oo = new ObjectOwner();
-                oo.OwnerSsnr = dataRow["ownerSsnr"].ToString();
-                oo.Name = dataRow["name"].ToString();
-                oo.PhoneNr = dataRow["phoneNr"].ToString();
-                oo.Email = dataRow["email"].ToString();
-                objectOwnerList.Add(oo);
+
+                SqlDataAdapter adapter = new SqlDataAdapter(
+                "select * from ObjectOwner", connectionString);
+                DataSet objectOwnerDS = new DataSet();
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adapter.Fill(objectOwnerDS, "ObjectOwner");
+
+                DataTable dt = new DataTable();
+                dt = objectOwnerDS.Tables["ObjectOwner"];
+                List<ObjectOwner> objectOwnerList = new List<ObjectOwner>();
+
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    ObjectOwner oo = new ObjectOwner();
+                    oo.OwnerSsnr = dataRow["ownerSsnr"].ToString();
+                    oo.Name = dataRow["name"].ToString();
+                    oo.PhoneNr = dataRow["phoneNr"].ToString();
+                    oo.Email = dataRow["email"].ToString();
+                    objectOwnerList.Add(oo);
+                }
+                return objectOwnerList;
             }
-
-
-            return objectOwnerList;
+            catch (Exception ex)
+            {
+                
+                errorMessage = ex.StackTrace;
+            }
+            return null;
         }
 
         public List<RealEstateBroker> GetRealEstateBroker()

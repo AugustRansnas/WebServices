@@ -99,7 +99,7 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="App_Data\" />
+    <Folder Include="Service References\App_Data\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Service References\WebServiceUpg1Reference\WebServiceUpg1.wsdl" />

@@ -15,7 +15,7 @@ namespace WebService.WebServiceUpg2Reference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ObjectOwner", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ObjectOwner", Namespace="http://brokerapplication.org/")]
     [System.SerializableAttribute()]
     public partial class ObjectOwner : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -108,7 +108,7 @@ namespace WebService.WebServiceUpg2Reference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RealEstateBroker", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RealEstateBroker", Namespace="http://brokerapplication.org/")]
     [System.SerializableAttribute()]
     public partial class RealEstateBroker : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -233,7 +233,7 @@ namespace WebService.WebServiceUpg2Reference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Showing", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="Showing", Namespace="http://brokerapplication.org/")]
     [System.SerializableAttribute()]
     public partial class Showing : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -309,7 +309,7 @@ namespace WebService.WebServiceUpg2Reference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="ProspectiveBuyer", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="ProspectiveBuyer", Namespace="http://brokerapplication.org/")]
     [System.SerializableAttribute()]
     public partial class ProspectiveBuyer : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -402,7 +402,7 @@ namespace WebService.WebServiceUpg2Reference {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="RealEstateObject", Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="RealEstateObject", Namespace="http://brokerapplication.org/")]
     [System.SerializableAttribute()]
     public partial class RealEstateObject : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
         
@@ -603,27 +603,27 @@ namespace WebService.WebServiceUpg2Reference {
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="WebServiceUpg2Reference.WebServiceUpg2Soap")]
+    [System.ServiceModel.ServiceContractAttribute(Namespace="http://brokerapplication.org/", ConfigurationName="WebServiceUpg2Reference.WebServiceUpg2Soap")]
     public interface WebServiceUpg2Soap {
         
-        // CODEGEN: Generating message contract since element name GetObjectOwnerResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetObjectOwner", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name errorMessage from namespace http://brokerapplication.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://brokerapplication.org/GetObjectOwner", ReplyAction="*")]
         WebService.WebServiceUpg2Reference.GetObjectOwnerResponse GetObjectOwner(WebService.WebServiceUpg2Reference.GetObjectOwnerRequest request);
         
-        // CODEGEN: Generating message contract since element name GetRealEstateBrokerResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRealEstateBroker", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name GetRealEstateBrokerResult from namespace http://brokerapplication.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://brokerapplication.org/GetRealEstateBroker", ReplyAction="*")]
         WebService.WebServiceUpg2Reference.GetRealEstateBrokerResponse GetRealEstateBroker(WebService.WebServiceUpg2Reference.GetRealEstateBrokerRequest request);
         
-        // CODEGEN: Generating message contract since element name GetShowingResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetShowing", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name GetShowingResult from namespace http://brokerapplication.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://brokerapplication.org/GetShowing", ReplyAction="*")]
         WebService.WebServiceUpg2Reference.GetShowingResponse GetShowing(WebService.WebServiceUpg2Reference.GetShowingRequest request);
         
-        // CODEGEN: Generating message contract since element name GetProspectiveBuyersResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetProspectiveBuyers", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name GetProspectiveBuyersResult from namespace http://brokerapplication.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://brokerapplication.org/GetProspectiveBuyers", ReplyAction="*")]
         WebService.WebServiceUpg2Reference.GetProspectiveBuyersResponse GetProspectiveBuyers(WebService.WebServiceUpg2Reference.GetProspectiveBuyersRequest request);
         
-        // CODEGEN: Generating message contract since element name GetRealEstateObjectsResult from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/GetRealEstateObjects", ReplyAction="*")]
+        // CODEGEN: Generating message contract since element name GetRealEstateObjectsResult from namespace http://brokerapplication.org/ is not marked nillable
+        [System.ServiceModel.OperationContractAttribute(Action="http://brokerapplication.org/GetRealEstateObjects", ReplyAction="*")]
         WebService.WebServiceUpg2Reference.GetRealEstateObjectsResponse GetRealEstateObjects(WebService.WebServiceUpg2Reference.GetRealEstateObjectsRequest request);
     }
     
@@ -633,7 +633,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetObjectOwnerRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetObjectOwner", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetObjectOwner", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetObjectOwnerRequestBody Body;
         
         public GetObjectOwnerRequest() {
@@ -647,10 +647,17 @@ namespace WebService.WebServiceUpg2Reference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://brokerapplication.org/")]
     public partial class GetObjectOwnerRequestBody {
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
+        public string errorMessage;
+        
         public GetObjectOwnerRequestBody() {
+        }
+        
+        public GetObjectOwnerRequestBody(string errorMessage) {
+            this.errorMessage = errorMessage;
         }
     }
     
@@ -660,7 +667,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetObjectOwnerResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetObjectOwnerResponse", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetObjectOwnerResponse", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetObjectOwnerResponseBody Body;
         
         public GetObjectOwnerResponse() {
@@ -674,17 +681,21 @@ namespace WebService.WebServiceUpg2Reference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://brokerapplication.org/")]
     public partial class GetObjectOwnerResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
         public WebService.WebServiceUpg2Reference.ObjectOwner[] GetObjectOwnerResult;
         
+        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=1)]
+        public string errorMessage;
+        
         public GetObjectOwnerResponseBody() {
         }
         
-        public GetObjectOwnerResponseBody(WebService.WebServiceUpg2Reference.ObjectOwner[] GetObjectOwnerResult) {
+        public GetObjectOwnerResponseBody(WebService.WebServiceUpg2Reference.ObjectOwner[] GetObjectOwnerResult, string errorMessage) {
             this.GetObjectOwnerResult = GetObjectOwnerResult;
+            this.errorMessage = errorMessage;
         }
     }
     
@@ -694,7 +705,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetRealEstateBrokerRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateBroker", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateBroker", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetRealEstateBrokerRequestBody Body;
         
         public GetRealEstateBrokerRequest() {
@@ -721,7 +732,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetRealEstateBrokerResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateBrokerResponse", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateBrokerResponse", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetRealEstateBrokerResponseBody Body;
         
         public GetRealEstateBrokerResponse() {
@@ -735,7 +746,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://brokerapplication.org/")]
     public partial class GetRealEstateBrokerResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -755,7 +766,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetShowingRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetShowing", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetShowing", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetShowingRequestBody Body;
         
         public GetShowingRequest() {
@@ -782,7 +793,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetShowingResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetShowingResponse", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetShowingResponse", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetShowingResponseBody Body;
         
         public GetShowingResponse() {
@@ -796,7 +807,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://brokerapplication.org/")]
     public partial class GetShowingResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -816,7 +827,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetProspectiveBuyersRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetProspectiveBuyers", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetProspectiveBuyers", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetProspectiveBuyersRequestBody Body;
         
         public GetProspectiveBuyersRequest() {
@@ -843,7 +854,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetProspectiveBuyersResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetProspectiveBuyersResponse", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetProspectiveBuyersResponse", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetProspectiveBuyersResponseBody Body;
         
         public GetProspectiveBuyersResponse() {
@@ -857,7 +868,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://brokerapplication.org/")]
     public partial class GetProspectiveBuyersResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -877,7 +888,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetRealEstateObjectsRequest {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateObjects", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateObjects", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetRealEstateObjectsRequestBody Body;
         
         public GetRealEstateObjectsRequest() {
@@ -904,7 +915,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
     public partial class GetRealEstateObjectsResponse {
         
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateObjectsResponse", Namespace="http://tempuri.org/", Order=0)]
+        [System.ServiceModel.MessageBodyMemberAttribute(Name="GetRealEstateObjectsResponse", Namespace="http://brokerapplication.org/", Order=0)]
         public WebService.WebServiceUpg2Reference.GetRealEstateObjectsResponseBody Body;
         
         public GetRealEstateObjectsResponse() {
@@ -918,7 +929,7 @@ namespace WebService.WebServiceUpg2Reference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
+    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://brokerapplication.org/")]
     public partial class GetRealEstateObjectsResponseBody {
         
         [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
@@ -964,10 +975,12 @@ namespace WebService.WebServiceUpg2Reference {
             return base.Channel.GetObjectOwner(request);
         }
         
-        public WebService.WebServiceUpg2Reference.ObjectOwner[] GetObjectOwner() {
+        public WebService.WebServiceUpg2Reference.ObjectOwner[] GetObjectOwner(ref string errorMessage) {
             WebService.WebServiceUpg2Reference.GetObjectOwnerRequest inValue = new WebService.WebServiceUpg2Reference.GetObjectOwnerRequest();
             inValue.Body = new WebService.WebServiceUpg2Reference.GetObjectOwnerRequestBody();
+            inValue.Body.errorMessage = errorMessage;
             WebService.WebServiceUpg2Reference.GetObjectOwnerResponse retVal = ((WebService.WebServiceUpg2Reference.WebServiceUpg2Soap)(this)).GetObjectOwner(inValue);
+            errorMessage = retVal.Body.errorMessage;
             return retVal.Body.GetObjectOwnerResult;
         }
         
