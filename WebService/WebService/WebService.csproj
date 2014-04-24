@@ -61,12 +61,12 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </Content>
-    <Content Include="Service References\WebServiceUpg2Reference\configuration91.svcinfo" />
-    <Content Include="Service References\WebServiceUpg2Reference\configuration.svcinfo" />
-    <Content Include="Service References\WebServiceUpg2Reference\Reference.svcmap">
+    <None Include="Service References\WebServiceUpg2Reference\configuration91.svcinfo" />
+    <None Include="Service References\WebServiceUpg2Reference\configuration.svcinfo" />
+    <None Include="Service References\WebServiceUpg2Reference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
-    </Content>
+    </None>
     <Content Include="Web.config" />
     <Content Include="WebServiceUpg1.asmx" />
     <Content Include="WebServiceUpg2.asmx" />
@@ -118,7 +118,7 @@
     <Content Include="Service References\WebServiceUpg2Reference\WebService.WebServiceUpg2Reference.Showing.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
-    <Content Include="Service References\WebServiceUpg2Reference\WebServiceUpg2.wsdl" />
+    <None Include="Service References\WebServiceUpg2Reference\WebServiceUpg2.wsdl" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

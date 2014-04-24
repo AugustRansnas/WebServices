@@ -8,7 +8,7 @@ using System.Web;
 namespace WebService
 {
     public class DataAccessLayerWebService
-    {  
+    {
         string connectionString = "server=localhost; Trusted_Connection=yes; database=MA Praktikfallet;";
 
         public List<ObjectOwner> GetObjectOwner(ref string errorMessage)
@@ -46,133 +46,161 @@ namespace WebService
             return null;
         }
 
-        public List<RealEstateBroker> GetRealEstateBroker()
+
+
+        public List<RealEstateBroker> GetRealEstateBroker(ref string errorMessage)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from RealEstateBroker", connectionString);
-            DataSet realEstateBrokerDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(realEstateBrokerDS, "RealEstateBroker");
-
-            DataTable dt = new DataTable();
-            dt = realEstateBrokerDS.Tables["RealEstateBroker"];
-            List<RealEstateBroker> RealEstateBrokerList = new List<RealEstateBroker>();
-
-
-            foreach (DataRow dataRow in dt.Rows)
+            try
             {
-                RealEstateBroker oo = new RealEstateBroker();
-                oo.BrokerSsnr = dataRow["brokerSsnr"].ToString();
-                oo.Name = dataRow["name"].ToString();
-                oo.PhoneNr = dataRow["phoneNr"].ToString();
-                oo.Email = dataRow["email"].ToString();
-                oo.City = dataRow["city"].ToString();
-                oo.BrokerAddress = dataRow["brokerAddress"].ToString();
-                RealEstateBrokerList.Add(oo);
+                SqlDataAdapter adapter = new SqlDataAdapter(
+                "select * from RealEstateBroker", connectionString);
+                DataSet realEstateBrokerDS = new DataSet();
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adapter.Fill(realEstateBrokerDS, "RealEstateBroker");
+
+                DataTable dt = new DataTable();
+                dt = realEstateBrokerDS.Tables["RealEstateBroker"];
+                List<RealEstateBroker> RealEstateBrokerList = new List<RealEstateBroker>();
+
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    RealEstateBroker oo = new RealEstateBroker();
+                    oo.BrokerSsnr = dataRow["brokerSsnr"].ToString();
+                    oo.Name = dataRow["name"].ToString();
+                    oo.PhoneNr = dataRow["phoneNr"].ToString();
+                    oo.Email = dataRow["email"].ToString();
+                    oo.City = dataRow["city"].ToString();
+                    oo.BrokerAddress = dataRow["brokerAddress"].ToString();
+                    RealEstateBrokerList.Add(oo);
+                }
+
+
+                return RealEstateBrokerList;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.StackTrace;
             }
 
-
-            return RealEstateBrokerList;
+            return null;
 
         }
 
 
-        public List<Showing> GetShowing()
+        public List<Showing> GetShowing(ref string errorMessage)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from Showing", connectionString);
-            DataSet showingDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(showingDS, "Showing");
-
-            DataTable dt = new DataTable();
-            dt = showingDS.Tables["Showing"];
-            List<Showing> ShowingList = new List<Showing>();
-
-
-            foreach (DataRow dataRow in dt.Rows)
+            try
             {
-                Showing s = new Showing();
-                s.BuyerSsnr = dataRow["buyerSsnr"].ToString();
-                s.ObjNr = int.Parse(dataRow["objNr"].ToString());
-                s.ShowingDate = dataRow["showingDate"].ToString();
-                ShowingList.Add(s);
+                SqlDataAdapter adapter = new SqlDataAdapter(
+                "select * from Showing", connectionString);
+                DataSet showingDS = new DataSet();
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adapter.Fill(showingDS, "Showing");
+
+                DataTable dt = new DataTable();
+                dt = showingDS.Tables["Showing"];
+                List<Showing> ShowingList = new List<Showing>();
+
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    Showing s = new Showing();
+                    s.BuyerSsnr = dataRow["buyerSsnr"].ToString();
+                    s.ObjNr = int.Parse(dataRow["objNr"].ToString());
+                    s.ShowingDate = dataRow["showingDate"].ToString();
+                    ShowingList.Add(s);
+                }
+
+                return ShowingList;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.StackTrace;
             }
 
-
-            return ShowingList;
+            return null;
 
         }
 
-        public List<ProspectiveBuyer> GetProspectiveBuyers()
+        public List<ProspectiveBuyer> GetProspectiveBuyers(ref string errorMessage)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from ProspectiveBuyer", connectionString);
-            DataSet prospectiveBuyerDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(prospectiveBuyerDS, "ProspectiveBuyer");
-
-            DataTable dt = new DataTable();
-            dt = prospectiveBuyerDS.Tables["ProspectiveBuyer"];
-            List<ProspectiveBuyer> prospectiveBuyerList = new List<ProspectiveBuyer>();
-
-
-            foreach (DataRow dataRow in dt.Rows)
+            try
             {
-                ProspectiveBuyer pb = new ProspectiveBuyer();
-                pb.BuyerSsnr = dataRow["buyerSsnr"].ToString();
-                pb.Name = dataRow["name"].ToString();
-                pb.PhoneNr = dataRow["phoneNr"].ToString();
-                pb.Email = dataRow["email"].ToString();
-                prospectiveBuyerList.Add(pb);
+                SqlDataAdapter adapter = new SqlDataAdapter(
+                "select * from ProspectiveBuyer", connectionString);
+                DataSet prospectiveBuyerDS = new DataSet();
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adapter.Fill(prospectiveBuyerDS, "ProspectiveBuyer");
+
+                DataTable dt = new DataTable();
+                dt = prospectiveBuyerDS.Tables["ProspectiveBuyer"];
+                List<ProspectiveBuyer> prospectiveBuyerList = new List<ProspectiveBuyer>();
+
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    ProspectiveBuyer pb = new ProspectiveBuyer();
+                    pb.BuyerSsnr = dataRow["buyerSsnr"].ToString();
+                    pb.Name = dataRow["name"].ToString();
+                    pb.PhoneNr = dataRow["phoneNr"].ToString();
+                    pb.Email = dataRow["email"].ToString();
+                    prospectiveBuyerList.Add(pb);
+                }
+
+
+                return prospectiveBuyerList;
             }
-
-
-            return prospectiveBuyerList;
+            catch (Exception ex)
+            {
+                errorMessage = ex.StackTrace;
+            }
+            return null;
 
         }
 
-        public List<RealEstateObject> GetRealEstateObjects()
+        public List<RealEstateObject> GetRealEstateObjects(ref string errorMessage)
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from RealEstateObject", connectionString);
-            DataSet realEstateObjectDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(realEstateObjectDS, "RealEstateObject");
-
-            DataTable dt = new DataTable();
-            dt = realEstateObjectDS.Tables["RealEstateObject"];
-            List<RealEstateObject> realEstateObjectList = new List<RealEstateObject>();
-
-
-            foreach (DataRow dataRow in dt.Rows)
+            try
             {
-                RealEstateObject ro = new RealEstateObject();
-                ro.Objnr = int.Parse(dataRow["objNr"].ToString());
-                ro.ObjAddress = dataRow["objAddress"].ToString();
-                ro.ObjCity = dataRow["objCity"].ToString();
-                ro.ObjArea = int.Parse(dataRow["objArea"].ToString());
-                ro.ObjInfo = dataRow["objInfo"].ToString();
-                ro.ObjPrice = int.Parse(dataRow["objPrice"].ToString());
-                ro.OwnerSsnr = dataRow["ownerSsnr"].ToString();
-                ro.UnitType = dataRow["objUnitType"].ToString();
-                ro.Image = dataRow["objImage"].ToString();
-                ro.BrokerSsnr = dataRow["brokerSsnr"].ToString();
-                ro.ObjRooms = dataRow["objRooms"].ToString();
-                realEstateObjectList.Add(ro);
+                SqlDataAdapter adapter = new SqlDataAdapter(
+                "select * from RealEstateObject", connectionString);
+                DataSet realEstateObjectDS = new DataSet();
+                adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
+                adapter.Fill(realEstateObjectDS, "RealEstateObject");
+
+                DataTable dt = new DataTable();
+                dt = realEstateObjectDS.Tables["RealEstateObject"];
+                List<RealEstateObject> realEstateObjectList = new List<RealEstateObject>();
+
+
+                foreach (DataRow dataRow in dt.Rows)
+                {
+                    RealEstateObject ro = new RealEstateObject();
+                    ro.Objnr = int.Parse(dataRow["objNr"].ToString());
+                    ro.ObjAddress = dataRow["objAddress"].ToString();
+                    ro.ObjCity = dataRow["objCity"].ToString();
+                    ro.ObjArea = int.Parse(dataRow["objArea"].ToString());
+                    ro.ObjInfo = dataRow["objInfo"].ToString();
+                    ro.ObjPrice = int.Parse(dataRow["objPrice"].ToString());
+                    ro.OwnerSsnr = dataRow["ownerSsnr"].ToString();
+                    ro.UnitType = dataRow["objUnitType"].ToString();
+                    ro.Image = dataRow["objImage"].ToString();
+                    ro.BrokerSsnr = dataRow["brokerSsnr"].ToString();
+                    ro.ObjRooms = dataRow["objRooms"].ToString();
+                    realEstateObjectList.Add(ro);
+                }
+
+
+                return realEstateObjectList;
+            }
+            catch (Exception ex)
+            {
+                errorMessage = ex.StackTrace;
             }
 
-
-            return realEstateObjectList;
+            return null;
 
         }
     }
-
-
-
-
-
-
-
-
 }

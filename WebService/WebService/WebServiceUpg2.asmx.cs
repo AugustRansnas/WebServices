@@ -36,27 +36,27 @@ namespace WebService
         }
 
         [WebMethod(Description = "Returns RealEstateBroker", EnableSession = false)]
-        public List<RealEstateBroker> GetRealEstateBroker()
+        public List<RealEstateBroker> GetRealEstateBroker(ref string errorMessage)
         {
-            return dal.GetRealEstateBroker();
+            return dal.GetRealEstateBroker(ref errorMessage);
         }
 
         [WebMethod(Description = "Returns Showings", EnableSession = false)]
-        public List<Showing> GetShowing()
+        public List<Showing> GetShowing(ref string errorMessage)
         {
-            return dal.GetShowing();
+            return dal.GetShowing(ref errorMessage);
         }
 
         [WebMethod(Description = "Returns ProspectiveBuyers", EnableSession = false)]
-        public List<ProspectiveBuyer> GetProspectiveBuyers()
+        public List<ProspectiveBuyer> GetProspectiveBuyers(ref string errorMessage)
         {
-            return dal.GetProspectiveBuyers();
+            return dal.GetProspectiveBuyers(ref errorMessage);
         }
 
         [WebMethod(Description = "Returns RealEstateObjects", EnableSession = false)]
-        public List<RealEstateObject> GetRealEstateObjects()
+        public List<RealEstateObject> GetRealEstateObjects(ref string errorMessage)
         {
-            return dal.GetRealEstateObjects();
+            return dal.GetRealEstateObjects(ref errorMessage);
         }
     }
 }
