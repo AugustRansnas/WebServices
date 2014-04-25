@@ -35,7 +35,7 @@ namespace WebService
             }
             catch (ArgumentException)
             {
-                return "Error: ArgumentException. Ogiltlig sökväg.";
+                return "Error: ArgumentException. Ogiltlig sökväg eller filnamn.";
             }
             catch (FileNotFoundException)
             {
