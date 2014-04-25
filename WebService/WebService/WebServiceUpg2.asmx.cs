@@ -30,8 +30,7 @@ namespace WebService
         [WebMethod(Description = "Returns ObjectOwners", EnableSession = false)]
         public List<ObjectOwner> GetObjectOwner()
         {
-                return dal.GetObjectOwner(); 
-          
+                return dal.GetObjectOwner();        
         }
 
         [WebMethod(Description = "Returns RealEstateBroker", EnableSession = false)]
