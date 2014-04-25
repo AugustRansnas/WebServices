@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
@@ -9,9 +10,9 @@ namespace WebService
 {
     public class DataAccessLayerWebService
     {
-        string connectionString = "server=localhost; Trusted_Connection=yes; database=MA Praktikfallet;";
+        string connectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
 
-        public List<ObjectOwner> GetObjectOwner(ref string errorMessage)
+        public List<ObjectOwner> GetObjectOwner()
         {
             try
             {
@@ -26,7 +27,6 @@ namespace WebService
                 dt = objectOwnerDS.Tables["ObjectOwner"];
                 List<ObjectOwner> objectOwnerList = new List<ObjectOwner>();
 
-
                 foreach (DataRow dataRow in dt.Rows)
                 {
                     ObjectOwner oo = new ObjectOwner();
@@ -38,17 +38,29 @@ namespace WebService
                 }
                 return objectOwnerList;
             }
-            catch (Exception ex)
-            {
 
-                errorMessage = ex.StackTrace;
+            catch (SqlException)
+            {
+                throw;
             }
-            return null;
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (SystemException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+            
         }
 
 
 
-        public List<RealEstateBroker> GetRealEstateBroker(ref string errorMessage)
+        public List<RealEstateBroker> GetRealEstateBroker()
         {
             try
             {
@@ -78,17 +90,27 @@ namespace WebService
 
                 return RealEstateBrokerList;
             }
-            catch (Exception ex)
+            catch (SqlException)
             {
-                errorMessage = ex.StackTrace;
+                throw;
             }
-
-            return null;
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (SystemException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
 
-        public List<Showing> GetShowing(ref string errorMessage)
+        public List<Showing> GetShowing()
         {
             try
             {
@@ -114,16 +136,26 @@ namespace WebService
 
                 return ShowingList;
             }
-            catch (Exception ex)
+            catch (SqlException)
             {
-                errorMessage = ex.StackTrace;
+                throw;
             }
-
-            return null;
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (SystemException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
-        public List<ProspectiveBuyer> GetProspectiveBuyers(ref string errorMessage)
+        public List<ProspectiveBuyer> GetProspectiveBuyers()
         {
             try
             {
@@ -151,15 +183,26 @@ namespace WebService
 
                 return prospectiveBuyerList;
             }
-            catch (Exception ex)
+            catch (SqlException)
             {
-                errorMessage = ex.StackTrace;
+                throw;
             }
-            return null;
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (SystemException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
 
-        public List<RealEstateObject> GetRealEstateObjects(ref string errorMessage)
+        public List<RealEstateObject> GetRealEstateObjects()
         {
             try
             {
@@ -194,12 +237,22 @@ namespace WebService
 
                 return realEstateObjectList;
             }
-            catch (Exception ex)
+            catch (SqlException)
             {
-                errorMessage = ex.StackTrace;
+                throw;
             }
-
-            return null;
+            catch (ArgumentException)
+            {
+                throw;
+            }
+            catch (SystemException)
+            {
+                throw;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
 
         }
     }

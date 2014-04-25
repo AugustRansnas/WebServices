@@ -65,7 +65,6 @@
     <None Include="Service References\WebServiceUpg2Reference\configuration.svcinfo" />
     <None Include="Service References\WebServiceUpg2Reference\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="Web.config" />
     <Content Include="WebServiceUpg1.asmx" />

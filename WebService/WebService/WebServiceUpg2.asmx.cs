@@ -25,38 +25,37 @@ namespace WebService
         public WebServiceUpg2()
         {
             this.dal = new DataAccessLayerWebService();
-        }
-        
+        }       
 
         [WebMethod(Description = "Returns ObjectOwners", EnableSession = false)]
-        public List<ObjectOwner> GetObjectOwner(ref string errorMessage)
+        public List<ObjectOwner> GetObjectOwner()
         {
-                return dal.GetObjectOwner(ref errorMessage); 
+                return dal.GetObjectOwner(); 
           
         }
 
         [WebMethod(Description = "Returns RealEstateBroker", EnableSession = false)]
-        public List<RealEstateBroker> GetRealEstateBroker(ref string errorMessage)
+        public List<RealEstateBroker> GetRealEstateBroker()
         {
-            return dal.GetRealEstateBroker(ref errorMessage);
+            return dal.GetRealEstateBroker();
         }
 
         [WebMethod(Description = "Returns Showings", EnableSession = false)]
-        public List<Showing> GetShowing(ref string errorMessage)
+        public List<Showing> GetShowing()
         {
-            return dal.GetShowing(ref errorMessage);
+            return dal.GetShowing();
         }
 
         [WebMethod(Description = "Returns ProspectiveBuyers", EnableSession = false)]
-        public List<ProspectiveBuyer> GetProspectiveBuyers(ref string errorMessage)
+        public List<ProspectiveBuyer> GetProspectiveBuyers()
         {
-            return dal.GetProspectiveBuyers(ref errorMessage);
+            return dal.GetProspectiveBuyers();
         }
 
         [WebMethod(Description = "Returns RealEstateObjects", EnableSession = false)]
-        public List<RealEstateObject> GetRealEstateObjects(ref string errorMessage)
+        public List<RealEstateObject> GetRealEstateObjects()
         {
-            return dal.GetRealEstateObjects(ref errorMessage);
+            return dal.GetRealEstateObjects();
         }
     }
 }
