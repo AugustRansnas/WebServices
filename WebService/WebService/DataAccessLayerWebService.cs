@@ -12,22 +12,37 @@ namespace WebService
     {
         string connectionString = ConfigurationManager.ConnectionStrings["myConnectionString"].ConnectionString;
 
+        private DataTable ExecuteQuery(string sqlStr)
+        {
+            DataTable dataTable = new DataTable();
+            SqlConnection con = new SqlConnection(connectionString);
+
+            try
+            {
+                con.Open();
+                SqlDataAdapter dataAdapter = new SqlDataAdapter(sqlStr, con);
+                dataAdapter.Fill(dataTable);
+            }
+            finally
+            {
+                if (con.State == ConnectionState.Open)
+                {
+                    con.Close();
+                }
+            }
+            return dataTable;
+        }
+
         public List<ObjectOwner> GetObjectOwner()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from ObjectOwner", connectionString);
-            DataSet objectOwnerDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(objectOwnerDS, "ObjectOwner");
-
-            DataTable dt = new DataTable();
-            dt = objectOwnerDS.Tables["ObjectOwner"];
+            string sqlStr = "select * from ObjectOwner";           
+            DataTable dt = ExecuteQuery(sqlStr);
             List<ObjectOwner> objectOwnerList = new List<ObjectOwner>();
 
             foreach (DataRow dataRow in dt.Rows)
             {
                 ObjectOwner oo = new ObjectOwner();
-                oo.OwnerSsnr = dataRow["ownerSsnr"].ToString();
+                oo.OwnerSsnr = dataRow["ownerSsnrs"].ToString();
                 oo.Name = dataRow["name"].ToString();
                 oo.PhoneNr = dataRow["phoneNr"].ToString();
                 oo.Email = dataRow["email"].ToString();
@@ -38,14 +53,9 @@ namespace WebService
 
         public List<RealEstateBroker> GetRealEstateBroker()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from RealEstateBroker", connectionString);
-            DataSet realEstateBrokerDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(realEstateBrokerDS, "RealEstateBroker");
+            string sqlStr = "select * from RealEstateBroker";
+            DataTable dt = ExecuteQuery(sqlStr);
 
-            DataTable dt = new DataTable();
-            dt = realEstateBrokerDS.Tables["RealEstateBroker"];
             List<RealEstateBroker> RealEstateBrokerList = new List<RealEstateBroker>();
 
             foreach (DataRow dataRow in dt.Rows)
@@ -65,16 +75,9 @@ namespace WebService
 
         public List<Showing> GetShowing()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from Showing", connectionString);
-            DataSet showingDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(showingDS, "Showing");
-
-            DataTable dt = new DataTable();
-            dt = showingDS.Tables["Showing"];
+            string sqlStr = "select * from Showing";
+            DataTable dt = ExecuteQuery(sqlStr);
             List<Showing> ShowingList = new List<Showing>();
-
 
             foreach (DataRow dataRow in dt.Rows)
             {
@@ -90,16 +93,9 @@ namespace WebService
 
         public List<ProspectiveBuyer> GetProspectiveBuyers()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from ProspectiveBuyer", connectionString);
-            DataSet prospectiveBuyerDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(prospectiveBuyerDS, "ProspectiveBuyer");
-
-            DataTable dt = new DataTable();
-            dt = prospectiveBuyerDS.Tables["ProspectiveBuyer"];
+            string sqlStr = "select * from ProspectiveBuyer";
+            DataTable dt = ExecuteQuery(sqlStr);
             List<ProspectiveBuyer> prospectiveBuyerList = new List<ProspectiveBuyer>();
-
 
             foreach (DataRow dataRow in dt.Rows)
             {
@@ -116,16 +112,9 @@ namespace WebService
 
         public List<RealEstateObject> GetRealEstateObjects()
         {
-            SqlDataAdapter adapter = new SqlDataAdapter(
-            "select * from RealEstateObject", connectionString);
-            DataSet realEstateObjectDS = new DataSet();
-            adapter.MissingSchemaAction = MissingSchemaAction.AddWithKey;
-            adapter.Fill(realEstateObjectDS, "RealEstateObject");
-
-            DataTable dt = new DataTable();
-            dt = realEstateObjectDS.Tables["RealEstateObject"];
+            string sqlStr = "select * from RealEstateObject";
+            DataTable dt = ExecuteQuery(sqlStr);
             List<RealEstateObject> realEstateObjectList = new List<RealEstateObject>();
-
 
             foreach (DataRow dataRow in dt.Rows)
             {
